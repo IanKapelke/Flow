@@ -19,10 +19,9 @@ public class Flow extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FlowView.fxml"));
-        
-        Scene scene = new Scene(root);
-        
+        Parent root = FXMLLoader.load(getClass().getResource("FlowView.fxml"));        
+        Scene scene = new Scene(root, 500, 500);
+        stage.setTitle("Flow");
         stage.setScene(scene);
         stage.show();
     }

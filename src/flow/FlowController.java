@@ -10,7 +10,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.Group;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.paint.Color;
+import javafx.scene.layout.*;
+
+
 
 /**
  *
@@ -18,18 +24,30 @@ import javafx.scene.control.Label;
  */
 public class FlowController implements Initializable {
     
-    @FXML
-    private Label label;
+    @FXML private GridPane gridpane;
     
+    
+    /*
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.out.println("You clicked me!");
         label.setText("Hello World!");
     }
+
+*/
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        Rectangle redRectangle = new Rectangle(0, 0, 50, 50);
+        redRectangle.setFill(Color.RED);
+        
+        Rectangle greenRectangle = new Rectangle(0, 0, 50, 50);
+        greenRectangle.setFill(Color.GREEN);
+        
+        gridpane.add(redRectangle, 1, 1);
+        gridpane.add(greenRectangle, 2, 2);
+
     }    
     
 }
