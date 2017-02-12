@@ -8,11 +8,24 @@
 <?import javafx.scene.shape.*?>
 
 <!--  <?import javafx.scene.Group?> -->
-
-<GridPane fx:id="gridpane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flow.FlowController"> 
-    <gridLinesVisible>true</gridLinesVisible>
-</GridPane>
-
+<BorderPane fx:id="borderpane" prefHeight="200" prefWidth="200" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flow.FlowController">
+    
+    <top>
+        <HBox spacing="10">
+            <Rectangle fx:id="colorIndicator" x="0" y="0" width="100" height="100" fill="GREY"/>
+            <Rectangle fx:id="greySelector" x="0" y="0" width="50" height="50" fill="GREY"/>
+            <Rectangle fx:id="redSelector" x="0" y="0" width="50" height="50" fill="RED"/>
+            <Rectangle fx:id="greenSelector" x="0" y="0" width="50" height="50" fill="GREEN"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <GridPane fx:id="gridpane" prefHeight="100" prefWidth="100" alignment="CENTER"> 
+            <gridLinesVisible>true</gridLinesVisible>
+        </GridPane>
+    </center>
+    
+</BorderPane>
         <!--
         <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
         <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
