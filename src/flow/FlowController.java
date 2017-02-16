@@ -44,7 +44,8 @@ public class FlowController implements Initializable {
         
         this.model = new FlowModel();
         
-       
+        
+        /*
         Rectangle redRectangle = new Rectangle(0, 0, 50, 50);
         redRectangle.setFill(Color.RED);
         
@@ -53,7 +54,7 @@ public class FlowController implements Initializable {
         
         gridpane.add(redRectangle, 1, 1);
         gridpane.add(greenRectangle, 2, 2);
-
+        */
     }    
     
 }

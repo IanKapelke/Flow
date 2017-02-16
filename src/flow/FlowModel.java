@@ -13,17 +13,21 @@ import java.util.*;
  */
 public class FlowModel {
    
-    VertexColor selectedColor;
-    Graph gameGraph;
+    private VertexColor selectedColor;
+    private Graph gameGraph;
     
     public FlowModel(){
         this.selectedColor = VertexColor.GREY;
-        this.gameGraph = new Graph();
+        this.gameGraph = new Graph(2);
+        
+        Vertex source = new Vertex(0);
+        Vertex destination = new Vertex(1);
+        
+        this.gameGraph.addEdge(source, destination);
     }
     
     public void updateSelectedColor(VertexColor color){
         this.selectedColor = color;
     }
-    
-    
+        
 }
