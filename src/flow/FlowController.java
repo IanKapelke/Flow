@@ -42,7 +42,7 @@ public class FlowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        this.model = new FlowModel(4);
+        this.model = new FlowModel();
         
        
         Rectangle redRectangle = new Rectangle(0, 0, 50, 50);

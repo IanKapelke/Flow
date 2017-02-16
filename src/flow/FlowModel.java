@@ -14,21 +14,11 @@ import java.util.*;
 public class FlowModel {
    
     VertexColor selectedColor;
-    ArrayList<ArrayList<Vertex>> gameGraph;
+    Graph gameGraph;
     
-    public FlowModel(int dimension){
+    public FlowModel(){
         this.selectedColor = VertexColor.GREY;
-        this.gameGraph = new ArrayList<>();
-        
-        for(int i=0; i<dimension; i++){
-            ArrayList<Vertex> column = new ArrayList<>();
-            
-            for(int j=0;j<dimension; j++){
-                Vertex vertex = new Vertex(i, j);
-                column.add(vertex);
-            }
-            gameGraph.add(column);
-        }
+        this.gameGraph = new Graph();
     }
     
     public void updateSelectedColor(VertexColor color){

@@ -12,19 +12,16 @@ package flow;
 public class Vertex {
     private final boolean isMutable;
     private VertexColor color;
-    private final int xPosition;
-    private final int yPosition;
+    private final int id;
     
-    public Vertex(int xPosition, int yPosition){
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
+    public Vertex(int id){
+        this.id = id;
         this.isMutable = true;
         this.color = VertexColor.GREY;
     }
     
-    public Vertex(int xPosition, int yPosition, VertexColor color){
-        this.xPosition = xPosition;
-        this.yPosition = yPosition;
+    public Vertex(int id, VertexColor color){
+        this.id = id;
         this.isMutable = false;
         this.color = color;
     }
@@ -37,11 +34,7 @@ public class Vertex {
         return this.color;
     }
     
-    public int getXPosition(){
-        return this.xPosition;
-    }
-    
-    public int getYPosition(){
-        return this.yPosition;
+    public int getId(){
+        return this.id;
     }
 }
