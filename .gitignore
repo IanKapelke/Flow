@@ -1,23 +1,8 @@
-#from github user niclashoyer
+#from github/gitignore/Global/NetBeans.gitignore
 
-#ant specific
-dist/
+nbproject/private/
 build/
-
-#netbeans specific
-core
-nbproject/*
-!nbproject/project.properties
-!nbproject/project.xml
-
-#java specific
-*.class
-
-#general swap/backup files
-*.so
-*.log
-*.out
-*~
-*.swp
-*.DS_Store
-*.lock
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
