@@ -13,30 +13,22 @@ import java.util.*;
  */
 public class Graph {
     private final ArrayList<Vertex> vertexList;
-    private final ArrayList<ArrayList<Boolean>> adjacencyMatrix;
+    private final AdjacencyMatrix adjacencyMatrix;
     
     
     public Graph(int numVertices){
-        this.vertexList = new ArrayList<>();
-      
-        for(int i=0; i<numVertices;i++){
+        this.vertexList = new ArrayList<>();      
+        for(int i=0; i<numVertices; i++){
             this.vertexList.add(new Vertex(i));
         }
         
-        this.adjacencyMatrix = new ArrayList<>();
-        for(int i=0;i<numVertices;i++){
-            ArrayList<Boolean> column = new ArrayList<>();
-            for(int j=0; j<numVertices;j++){
-                column.add(false);
-            }
-            this.adjacencyMatrix.add(column);
-        }
-        
+        this.adjacencyMatrix = new AdjacencyMatrix(numVertices);        
     }
         
     public void addEdge(Vertex source, Vertex destination){
-        this.adjacencyMatrix.get(source.getId()).add(destination.getId(),true);
-        this.adjacencyMatrix.get(destination.getId()).add(source.getId(),true);
+        int sourceId = source.getId();
+        int destinationId = destination.getId();
+        this.adjacencyMatrix.setEntry(sourceId, destinationId, Boolean.TRUE);
     }
     
 }

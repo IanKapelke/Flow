@@ -5,10 +5,22 @@
  */
 package flow;
 
+import javafx.scene.paint.Color;
 /**
  *
  * @author ian
  */
 public enum VertexColor {
-    GREY, RED, GREEN
+    GREY(Color.GREY), RED(Color.RED), GREEN(Color.GREEN);
+    
+    private final Color paintColor;
+    
+    private VertexColor(Color paintColor){
+        this.paintColor = paintColor;
+    }
+    
+    public Color getPaintColor(){
+        return this.paintColor;
+    }
+    
 }
