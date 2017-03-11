@@ -16,6 +16,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.*;
 
+import javafx.event.*;
+import javafx.scene.input.MouseEvent;
+
 
 
 /**
@@ -26,6 +29,10 @@ public class FlowController implements Initializable {
     
     @FXML private GridPane gridpane;
     @FXML private Rectangle colorIndicator;
+    @FXML private Rectangle greySelector;
+    @FXML private Rectangle redSelector;
+    @FXML private Rectangle greenSelector;
+
     
     private FlowModel model;
     
@@ -45,6 +52,32 @@ public class FlowController implements Initializable {
         this.model = new FlowModel();
         
         
+            greySelector.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event){
+                model.setSelectedColor(VertexColor.GREY);
+                updateView();
+            }
+        });
+        
+        
+            redSelector.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event){
+                model.setSelectedColor(VertexColor.RED);
+                updateView();
+            }
+        });
+            
+            greenSelector.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+            public void handle(MouseEvent event){
+                model.setSelectedColor(VertexColor.GREEN);
+                updateView();
+            }
+        });
+        
+        
         
         Rectangle redRectangle = new Rectangle(0, 0, 50, 50);
         redRectangle.setFill(VertexColor.GREEN.getPaintColor());
@@ -56,6 +89,11 @@ public class FlowController implements Initializable {
  
         gridpane.add(greenRectangle, 2, 2);
         */
-    }    
+    }
+
+    public void updateView(){
+        VertexColor selectedColor = this.model.getSelectedColor();
+        this.colorIndicator.setFill(selectedColor.getPaintColor());
+    }
     
 }

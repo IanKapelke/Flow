@@ -14,17 +14,20 @@ import java.util.ArrayList;
 public class AdjacencyMatrix {
     private final ArrayList<ArrayList<Boolean>> matrix;
     
-    public AdjacencyMatrix(int dimensions){
+    public AdjacencyMatrix(){
         this.matrix = new ArrayList<>();
-         
-        for(int i=0; i<dimensions; i++){
-            ArrayList<Boolean> column = new ArrayList<>();
-            
-            for(int j=0; j<dimensions; j++){
-                column.add(Boolean.FALSE);
-            }
-            this.matrix.add(column);
+    }
+    
+    public void incrementDimensions(){
+        ArrayList<Boolean> newColumn = new ArrayList<>();
+        for(int i=0; i<this.matrix.size(); i++){
+            newColumn.add(Boolean.FALSE);
         }
+        this.matrix.add(newColumn);
+        
+        for(ArrayList<Boolean> column : this.matrix){
+            column.add(Boolean.FALSE);
+        }     
     }
     
     public void setEntry(int column, int row, Boolean entry){

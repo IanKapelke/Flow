@@ -16,18 +16,17 @@ public class Graph {
     private final AdjacencyMatrix adjacencyMatrix;
     
     
-    public Graph(int numVertices){
-        this.vertexList = new ArrayList<>();      
-        for(int i=0; i<numVertices; i++){
-            this.vertexList.add(new Vertex(i));
-        }
-        
-        this.adjacencyMatrix = new AdjacencyMatrix(numVertices);        
+    public Graph(){
+        this.vertexList = new ArrayList<>();              
+        this.adjacencyMatrix = new AdjacencyMatrix();        
     }
         
-    public void addEdge(Vertex source, Vertex destination){
-        int sourceId = source.getId();
-        int destinationId = destination.getId();
+    public void addVertex(Vertex vertex){
+        this.vertexList.add(vertex);
+        this.adjacencyMatrix.incrementDimensions();
+    }
+    
+    public void addEdge(int sourceId, int destinationId){
         this.adjacencyMatrix.setEntry(sourceId, destinationId, Boolean.TRUE);
     }
     
